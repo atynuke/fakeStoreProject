@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Carts from '../Carts/Cart'
 import './Products.css'
+import { Link } from 'react-router-dom'
 
 
 const StoreCart = () => {
@@ -13,13 +14,14 @@ const StoreCart = () => {
     }, []);
 
     const fetchProduct = async () => {
-        setLoading(true);
+        setLoading(true);    
         try {
             await fetch("https://fakestoreapi.com/products")
                 .then(async (res) => {
                     setProduct(await res.json());
                     setLoading(false);
                 });
+                console.log (product);
         }
         catch {
             (err) => {
@@ -39,8 +41,10 @@ const StoreCart = () => {
                         {
                          product.map((cart)=>{
                                 return(
+                                    <Link to ={'/product'} state={JSON.stringify(cart)}>
                                     <StoreCart key={cart.id} title={cart.title} price={cart.price} description={cart.description} category={cart.category} image={cart.image} />
-                                )
+                                    </Link>
+                                    )
                             })
                         }
                     </div>

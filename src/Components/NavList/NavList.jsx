@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import './NavList.css'
+
 
 const NavList = () => {
+    // const 
     return (
         <div>
 
@@ -10,25 +13,25 @@ const NavList = () => {
 
                 <nav id='nav'>
 
-                    <Link to={'/home'}>
+                    <NavLink to={'/home'}>
                         <a href="">Home</a>
-                    </Link>
+                    </NavLink>
 
-                    <Link to={'/service'}>
+                    <NavLink to={'/service'}>
                         <a href="">Service</a>
-                    </Link>
+                    </NavLink>
                     <div id='img1'> 
                     <img src="./src/assets/account.png" alt="" height={15} width={20} />
                     </div>
-                    <Link>
+                    <NavLink>
                         <a id='Acc' href="">Account</a>
-                    </Link>
+                    </NavLink>
                     <div id='cart'> 
                     <img src="./src/assets/shopping-cart-svg-png-icon.png" alt="" height={15} width={20} />
                     </div>
-                    <Link>
+                    <NavLink>
                         <a id='C' href="">Cart</a>
-                    </Link>
+                    </NavLink>
                 </nav>
             </div>
 
